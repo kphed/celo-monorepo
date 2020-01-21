@@ -10,13 +10,14 @@ interface Props {
   text?: string
   graphic: ImageSourcePropType
   link?: { href: string; text: string }
+  link2?: { href: string; text: string }
   style?: ViewStyle
   isMobile: boolean
 }
 
 const GRAPHIC_SIZE = 80
 
-export default function CoverAction({ title, text, graphic, link, isMobile, style }: Props) {
+export default function CoverAction({ title, text, graphic, link, link2, isMobile, style }: Props) {
   return (
     <View style={[isMobile ? styles.containerMobile : styles.container, style]}>
       <View style={isMobile && standardStyles.centered}>
@@ -41,12 +42,28 @@ export default function CoverAction({ title, text, graphic, link, isMobile, styl
           {text}
         </Text>
       </View>
-      {link && <Button kind={BTN.NAKED} href={link.href} text={link.text} size={SIZE.normal} />}
+      <View style={standardStyles.row}>
+        {link && (
+          <Button
+            kind={BTN.NAKED}
+            href={link.href}
+            text={link.text}
+            size={SIZE.normal}
+            style={styles.link}
+          />
+        )}
+        {link2 && (
+          <Button kind={BTN.NAKED} href={link2.href} text={link2.text} size={SIZE.normal} />
+        )}
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+  link: {
+    marginRight: 30,
+  },
   graphic: {
     height: GRAPHIC_SIZE,
     width: GRAPHIC_SIZE,

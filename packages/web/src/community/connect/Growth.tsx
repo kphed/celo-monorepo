@@ -4,9 +4,12 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import Fade from 'react-reveal/Fade'
 import ah from 'src/community/ah-logo-white.png'
 import FullCircle from 'src/community/connect/FullCircle'
+import developersPNG from 'src/community/developers.png'
+import doersPNG from 'src/community/doers.png'
+import dreamersPNG from 'src/community/dreamers.png'
 import polychain from 'src/community/polychain-logo-white.png'
 import CoverAction from 'src/dev/CoverAction'
-import { H2, H3 } from 'src/fonts/Fonts'
+import { H1, H2, H3 } from 'src/fonts/Fonts'
 import { I18nProps, NameSpaces, Trans, withNamespaces } from 'src/i18n'
 import { Cell, GridRow, Spans } from 'src/layout/GridRow'
 import { ScreenProps, ScreenSizes, withScreenSize } from 'src/layout/ScreenSize'
@@ -20,6 +23,12 @@ type VoidFunc = () => void
 
 class Growth extends React.PureComponent<Props> {
   render() {
+    const partnerStyles = [
+      fonts.h6,
+      styles.partnerText,
+      textStyles.invert,
+      standardStyles.elementalMarginBottom,
+    ]
     const { screen, t } = this.props
     const isDesktop = screen === ScreenSizes.DESKTOP
     return (
@@ -49,7 +58,6 @@ class Growth extends React.PureComponent<Props> {
             </View>
           </View>
         </View>
-
         <GridRow
           desktopStyle={standardStyles.blockMarginBottom}
           tabletStyle={standardStyles.blockMarginBottomTablet}
@@ -57,9 +65,9 @@ class Growth extends React.PureComponent<Props> {
         >
           <Cell span={Spans.half}>
             <View style={styles.fundTitleArea}>
-              <H2 style={[standardStyles.elementalMargin, textStyles.invert]}>
+              <H1 ariaLevel="2" style={[standardStyles.elementalMargin, textStyles.invert]}>
                 {t('ecoFund.title')}
-              </H2>
+              </H1>
               <Text style={[fonts.h4, textStyles.invert]}>
                 <Trans ns={NameSpaces.community} i18nKey={'ecoFund.poweredBy'}>
                   <Text style={textStyles.italic}>polychain</Text>
@@ -73,9 +81,7 @@ class Growth extends React.PureComponent<Props> {
             </Text>
             <View style={[standardStyles.row, standardStyles.elementalMargin, standardStyles.wrap]}>
               <View style={styles.partners}>
-                <Text style={[fonts.h6, styles.partnerText, textStyles.invert]}>
-                  {t('ecoFund.generalPartner')}
-                </Text>
+                <Text style={partnerStyles}>{t('ecoFund.generalPartner')}</Text>
                 <Image
                   resizeMode="contain"
                   accessibilityLabel="Polychain"
@@ -84,9 +90,7 @@ class Growth extends React.PureComponent<Props> {
                 />
               </View>
               <View style={styles.partners}>
-                <Text style={[fonts.h6, styles.partnerText, textStyles.invert]}>
-                  {t('ecoFund.limitedPartners')}
-                </Text>
+                <Text style={partnerStyles}>{t('ecoFund.limitedPartners')}</Text>
                 <View style={[standardStyles.row, styles.limitedPartners]}>
                   <Rings color={colors.white} height={40} />
                   <Image
@@ -117,12 +121,47 @@ class Growth extends React.PureComponent<Props> {
           </Cell>
         </GridRow>
         <GridRow>
-          <Cell span={Spans.third}>
+          <Cell span={Spans.full}>
             <H3 style={textStyles.invert}>{t('contribute.title')}</H3>
-            <CoverAction title={t('contribute.growth')} isMobile={false} graphic={{ uri: '' }} />
           </Cell>
-          <Cell span={Spans.third}>{}</Cell>
-          <Cell span={Spans.third}>{}</Cell>
+        </GridRow>
+        <GridRow
+          desktopStyle={standardStyles.sectionMarginBottom}
+          tabletStyle={standardStyles.sectionMarginBottomTablet}
+          mobileStyle={standardStyles.sectionMarginBottomMobile}
+        >
+          <Cell span={Spans.third}>
+            <CoverAction
+              style={styles.action}
+              title={t('contribute.grants')}
+              text={t('contribute.grantsText')}
+              isMobile={false}
+              link={{ text: t('learnMore'), href: '' }}
+              link2={{ text: t('apply'), href: '' }}
+              graphic={doersPNG}
+            />
+          </Cell>
+          <Cell span={Spans.third}>
+            <CoverAction
+              style={styles.action}
+              title={t('contribute.fellowship')}
+              text={t('contribute.fellowshipText')}
+              isMobile={false}
+              link={{ text: t('learnMore'), href: '' }}
+              link2={{ text: t('apply'), href: '' }}
+              graphic={dreamersPNG}
+            />
+          </Cell>
+          <Cell span={Spans.third}>
+            <CoverAction
+              style={styles.action}
+              title={t('contribute.develop')}
+              text={t('contribute.developText')}
+              isMobile={false}
+              link={{ text: t('buildOnCelo'), href: '' }}
+              graphic={developersPNG}
+            />
+          </Cell>
         </GridRow>
       </View>
     )
@@ -144,6 +183,7 @@ const styles = StyleSheet.create({
   fullScreen: {
     width: '100vw',
   },
+  action: { marginHorizontal: 0 },
   aboveFold: { justifyContent: 'space-around', width: '100%', padding: 20 },
   darkBackground: {
     backgroundColor: colors.dark,
@@ -174,14 +214,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   polyChain: {
-    marginRight: 40,
+    marginRight: 50,
     marginBottom: 3,
-    width: 190,
-    height: 35,
+    width: 142,
+    height: 26,
   },
   a16z: {
-    width: 128,
-    height: 35,
+    width: 104,
+    height: 28,
     marginHorizontal: 30,
   },
 })

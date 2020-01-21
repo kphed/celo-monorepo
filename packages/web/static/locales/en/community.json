@@ -47,6 +47,7 @@
     "text": "Shared norms and behaviors are the foundation of a beautiful community. Please read and support the effort.",
     "button": "Read Code"
   },
+  "growth": "Growth",
   "communityTenets": "Celo Community Tenets",
   "communityGuidelines": "Community Guidelines",
   "writingAbout": "What We're Writing About",
@@ -71,8 +72,15 @@
     "callForProp": "Read More in our Call for Proposals"
   },
   "contribute": {
-    "title": "Contribute"
+    "title": "Contribute",
+    "grants": "Grants",
+    "grantsText": "Receive funding to grow the Celo Platform & Ecosystem",
+    "fellowship": "Fellowship",
+    "fellowshipText": "Leverage your unique purpose for specific Celo projects",
+    "develop": "Develop",
+    "developText": "Leverage your unique purpose for specific Celo projects"
   },
+  "buildOnCelo": "Build On Celo",
   "contributeToEcosystem": "Contribute to the ecosystem",
   "submit": "Submit",
   "events": {
@@ -119,7 +127,7 @@
   "ecoFund": {
     "title": "Receive VC funding for projects that build the Celo Ecosystem",
     "poweredBy": "Celo Ecosystem Fund <0>by Polychain</0>",
-    "description": "The Celo Ecosystem Venture Fund is a Polychain-led venture, supported by founding investors Andreessen Horowitz and Celo, with the goal of investing in and developing the Celo ecosystem. The fund aims to foster Celo’s mission of creating a more accessible monetary system by making strategic, seed-stage deployments into tools and services which will leverage Celo’s protocol to build new financial infrastructure in the developing world.",
+    "description": "The Celo Ecosystem Fund is a Polychain-led venture, supported by founding investors Andreessen Horowitz and Celo, with the goal of investing in and developing the Celo ecosystem. The fund aims to foster Celo’s mission of creating a more accessible monetary system by making strategic, seed-stage deployments into tools and services which will leverage Celo’s protocol to build new financial infrastructure in the developing world.",
     "generalPartner": "General Partner",
     "limitedPartners": "Limited Partners",
     "learn": "Learn More",

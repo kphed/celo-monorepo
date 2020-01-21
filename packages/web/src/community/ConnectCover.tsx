@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { H1, H4 } from 'src/fonts/Fonts'
 import EmailForm, { After } from 'src/forms/EmailForm'
 import { I18nProps, NameSpaces, withNamespaces } from 'src/i18n'
 import { Cell, GridRow, Spans } from 'src/layout/GridRow'
 import AspectRatio from 'src/shared/AspectRatio'
-import { colors, textStyles } from 'src/styles'
+import { colors, standardStyles, textStyles } from 'src/styles'
 
 export default withNamespaces(NameSpaces.community)(function ConnectCover({ t }: I18nProps) {
   return (
@@ -17,17 +17,19 @@ export default withNamespaces(NameSpaces.community)(function ConnectCover({ t }:
               <View style={{ backgroundColor: colors.faintGold, height: '100%' }} />
             </AspectRatio>
             <H1 style={textStyles.center}>
-              <Text>Developers. </Text>
-              <Text>Designers. </Text>
-              <Text>Dreamers. </Text>
-              <Text>Doers. </Text>
+              <Text style={styles.developers}>Developers. </Text>
+              <Text style={styles.designers}>Designers. </Text>
+              <Text style={styles.dreamers}>Dreamers. </Text>
+              <Text style={styles.doers}>Doers. </Text>
             </H1>
           </View>
         </Cell>
       </GridRow>
-      <GridRow>
-        <Cell span={Spans.full}>
-          <H4 style={textStyles.center}>{t('cover.joinMovement')}</H4>
+      <GridRow allStyle={standardStyles.centered}>
+        <Cell span={Spans.half}>
+          <H4 style={[textStyles.center, standardStyles.elementalMargin]}>
+            {t('cover.joinMovement')}
+          </H4>
           <EmailForm
             submitText={t('signUp')}
             route={'/contacts'}
@@ -38,4 +40,19 @@ export default withNamespaces(NameSpaces.community)(function ConnectCover({ t }:
       </GridRow>
     </>
   )
+})
+
+const styles = StyleSheet.create({
+  developers: {
+    color: colors.primary,
+  },
+  designers: {
+    color: colors.purple,
+  },
+  dreamers: {
+    color: colors.red,
+  },
+  doers: {
+    color: colors.lightBlue,
+  },
 })
