@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { View } from 'react-native'
 import Fade from 'react-reveal/Fade'
+import Community from 'src/community/connect/Community'
 import Growth from 'src/community/connect/Growth'
 import Tenets from 'src/community/connect/Tenets'
 import ConnectCover from 'src/community/ConnectCover'
@@ -41,8 +42,9 @@ export class ConnectPage extends React.Component<Props> {
           }
           image={preview}
         />
-        <View>
+        <View style={standardStyles.sectionMarginTop}>
           <ConnectCover />
+          <Community />
           <GridRow
             nativeID={hashNav.connect.events}
             desktopStyle={standardStyles.sectionMarginTop}

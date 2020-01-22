@@ -24,12 +24,7 @@ const CookieConsent = dynamic(
 )
 
 const menuItems = [menu.ABOUT_US, menu.JOBS, menu.BUILD, menu.COMMUNITY]
-const DARK_PAGES = new Set([
-  menu.HOME.link,
-  menu.COMMUNITY.link,
-  menu.BUILD.link,
-  CeloLinks.walletApp,
-])
+const DARK_PAGES = new Set([menu.HOME.link, menu.BUILD.link, CeloLinks.walletApp])
 
 const TRANSLUCENT_PAGES = new Set([menu.ABOUT_US.link])
 

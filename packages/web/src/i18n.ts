@@ -3,7 +3,7 @@ import NextI18Next, { I18n, TFunction } from 'next-i18next'
 const options = { defaultLanguage: 'en', otherLanguages: ['en'], saveMissing: false }
 const NextI18NextInstance = new NextI18Next(options)
 export const Trans = NextI18NextInstance.Trans
-
+export const useTranslation = NextI18NextInstance.useTranslation
 export interface I18nProps {
   t: TFunction
   i18n: I18n

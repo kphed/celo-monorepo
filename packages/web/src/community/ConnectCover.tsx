@@ -13,9 +13,11 @@ export default withNamespaces(NameSpaces.community)(function ConnectCover({ t }:
       <GridRow>
         <Cell span={Spans.full}>
           <View>
-            <AspectRatio ratio={855 / 286}>
-              <View style={{ backgroundColor: colors.faintGold, height: '100%' }} />
-            </AspectRatio>
+            <View style={standardStyles.blockMarginTablet}>
+              <AspectRatio ratio={855 / 286}>
+                <View style={{ backgroundColor: colors.faintGold, height: '100%' }} />
+              </AspectRatio>
+            </View>
             <H1 style={textStyles.center}>
               <Text style={styles.developers}>Developers. </Text>
               <Text style={styles.designers}>Designers. </Text>
@@ -25,7 +27,12 @@ export default withNamespaces(NameSpaces.community)(function ConnectCover({ t }:
           </View>
         </Cell>
       </GridRow>
-      <GridRow allStyle={standardStyles.centered}>
+      <GridRow
+        desktopStyle={standardStyles.sectionMarginBottom}
+        tabletStyle={standardStyles.sectionMarginBottomTablet}
+        mobileStyle={standardStyles.sectionMarginBottomMobile}
+        allStyle={standardStyles.centered}
+      >
         <Cell span={Spans.half}>
           <H4 style={[textStyles.center, standardStyles.elementalMargin]}>
             {t('cover.joinMovement')}
