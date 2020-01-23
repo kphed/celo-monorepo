@@ -8,12 +8,12 @@ reference:
   android_config: &android_config
     working_directory: *workspace
     macos:
-      xcode: '10.2.1'
+      xcode: "10.2.1"
     shell: /bin/bash --login -eo pipefail
     environment:
       TERM: dumb
-      _JAVA_OPTIONS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap'
-      GRADLE_OPTS: '-Dorg.gradle.daemon=false -Dorg.gradle.configureondemand=true'
+      _JAVA_OPTIONS: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
+      GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.configureondemand=true"
 
 defaults: &defaults
   working_directory: ~/app
@@ -21,15 +21,15 @@ defaults: &defaults
     - image: celohq/node10-gcloud
   environment:
     # To avoid ENOMEM problem when running node
-    NODE_OPTIONS: '--max-old-space-size=4096'
+    NODE_OPTIONS: "--max-old-space-size=4096"
 
 android-defaults: &android-defaults
   <<: *defaults
   docker:
     - image: circleci/android:api-28-node
   environment:
-    _JAVA_OPTIONS: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap'
-    GRADLE_OPTS: '-Dorg.gradle.daemon=false -Dorg.gradle.configureondemand=true'
+    _JAVA_OPTIONS: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
+    GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.configureondemand=true"
 
 e2e-defaults: &e2e-defaults
   <<: *defaults
@@ -40,8 +40,9 @@ e2e-defaults: &e2e-defaults
 
 general:
   artifacts:
-    - 'mobile/coverage'
-    - 'protocol/coverage'
+    - "mobile/coverage"
+    - "web/coverage"
+    - "protocol/coverage"
 
 jobs:
   install_dependencies:
@@ -60,7 +61,7 @@ jobs:
       - save_cache:
           key: source-v1-{{ .Branch }}-{{ .Revision }}
           paths:
-            - '.git'
+            - ".git"
 
       - run:
           name: Verify setup for incremental testing
@@ -288,6 +289,22 @@ jobs:
           command: |
             mkdir -p test-results/jest
             yarn run lerna --ignore @celo/contractkit --ignore @celo/mobile --ignore @celo/protocol --ignore @celo/celotool --ignore @celo/walletkit --ignore @celo/celocli run test
+
+      - store_test_results:
+          path: test-results
+
+      - store_artifacts:
+          path: packages/web/coverage
+          destination: web/coverage
+
+      - run:
+          name: copy
+          command: |
+            mkdir -p packages/web/web/coverage
+            cp -r packages/web/coverage packages/web/web/
+      - run:
+          name: Upload to CodeCov
+          command: yarn codecov -F web
 
   mobile-test-build-app:
     <<: *android-defaults
@@ -530,6 +547,26 @@ jobs:
             cd packages/celotool
             ./ci_test_blockchain_parameters.sh checkout ${CELO_BLOCKCHAIN_BRANCH_TO_TEST}
 
+  end-to-end-geth-slashing-test:
+    <<: *e2e-defaults
+    # Source: https://circleci.com/docs/2.0/configuration-reference/#resource_class
+    resource_class: medium+
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Check if the test should run
+          command: |
+            FILES_TO_CHECK="${PWD}/packages/celotool,${PWD}/packages/protocol,${PWD}/.circleci/config.yml"
+            ./scripts/ci_check_if_test_should_run_v2.sh ${FILES_TO_CHECK}
+      - run:
+          name: Run test
+          no_output_timeout: 20m
+          command: |
+            set -e
+            cd packages/celotool
+            ./ci_test_slashing.sh checkout ${CELO_BLOCKCHAIN_BRANCH_TO_TEST}
+
   end-to-end-geth-governance-test:
     <<: *e2e-defaults
     # Source: https://circleci.com/docs/2.0/configuration-reference/#resource_class
@@ -699,6 +736,10 @@ workflows:
           requires:
             - lint-checks
             - contractkit-test
+      - end-to-end-geth-slashing-test:
+          requires:
+            - lint-checks
+            - contractkit-test
       - end-to-end-geth-governance-test:
           requires:
             - lint-checks
@@ -716,7 +757,7 @@ workflows:
       - schedule:
           # 7 PM in UTC = noon in PDT.
           # Best for test to fail during SF afternoon, so that, someone can fix it during the day time.
-          cron: '0 19 * * *'
+          cron: "0 19 * * *"
           filters:
             branches:
               only:
@@ -732,7 +773,7 @@ workflows:
       - schedule:
           # 1 PM in UTC = 6 AM in PDT.
           # Best for this slow test (~3 hours) to run during SF early morning.
-          cron: '0 13 * * *'
+          cron: "0 13 * * *"
           filters:
             branches:
               only:
