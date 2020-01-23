@@ -55,8 +55,8 @@ function normalize(asset: Fields) {
 }
 
 function getPreview(asset: Fields) {
-  const previewField = asset[ASSSET_FIELD_LIGHT]
-
+  const previewField = asset.Preview || asset[ASSSET_FIELD_LIGHT]
+  console.log(previewField[0].thumbnails)
   return (
     (previewField &&
       previewField[0] &&

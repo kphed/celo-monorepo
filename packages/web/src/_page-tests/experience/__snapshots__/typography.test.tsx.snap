@@ -925,6 +925,116 @@ exports[`Experience/Typography renders 1`] = `
             </a>
           </div>
         </div>
+        <div
+          className="css-view-1dbjc4n"
+          style={
+            Object {
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitFlexDirection": "row",
+              "flexDirection": "row",
+              "marginBottom": "5px",
+              "marginLeft": "5px",
+              "marginRight": "5px",
+              "marginTop": "5px",
+              "msFlexDirection": "row",
+              "paddingBottom": "5px",
+              "paddingLeft": "5px",
+              "paddingRight": "5px",
+              "paddingTop": "5px",
+            }
+          }
+        >
+          <div
+            className="css-view-1dbjc4n"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onResponderGrant={[Function]}
+            onResponderRelease={[Function]}
+          >
+            <a
+              className="css-reset-4rbku5 css-cursor-18t94o4 css-text-901oao"
+              data-focusable={true}
+              dir="auto"
+              href="/experience/brand/key-imagery"
+              role="link"
+              style={
+                Object {
+                  "WebkitAlignItems": "center",
+                  "WebkitBoxAlign": "center",
+                  "WebkitBoxFlex": 0,
+                  "WebkitBoxPack": "center",
+                  "WebkitFlexGrow": 0,
+                  "WebkitJustifyContent": "center",
+                  "alignItems": "center",
+                  "backgroundColor": "rgba(0,0,0,0.00)",
+                  "borderBottomColor": "rgba(0,0,0,0.00)",
+                  "borderLeftColor": "rgba(0,0,0,0.00)",
+                  "borderRightColor": "rgba(0,0,0,0.00)",
+                  "borderTopColor": "rgba(0,0,0,0.00)",
+                  "color": "rgba(46,51,56,1.00)",
+                  "cursor": "pointer",
+                  "display": "inline-flex",
+                  "flexGrow": 0,
+                  "fontFamily": "Jost, futura-pt, futura, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "normal",
+                  "justifyContent": "center",
+                  "lineHeight": "16px",
+                  "msFlexAlign": "center",
+                  "msFlexPack": "center",
+                  "msFlexPositive": 0,
+                  "opacity": 1,
+                  "outlineColor": "transparent",
+                  "textAlign": "center",
+                  "textRendering": "geometricPrecision",
+                  "width": "fit-content",
+                }
+              }
+            >
+              <div
+                className="css-view-1dbjc4n"
+                style={
+                  Object {
+                    "display": "inline-flex",
+                    "paddingRight": "8px",
+                  }
+                }
+              >
+                <div
+                  className="css-view-1dbjc4n"
+                  style={
+                    Object {
+                      "display": "inline-flex",
+                      "width": "12px",
+                    }
+                  }
+                />
+              </div>
+              Key Imagery
+            </a>
+          </div>
+        </div>
+        <div
+          className="css-view-1dbjc4n"
+          style={
+            Object {
+              "MozTransitionProperty": "transform,",
+              "WebkitTransform": "scaleY(0)",
+              "WebkitTransformOrigin": "top",
+              "WebkitTransitionDuration": "500ms",
+              "WebkitTransitionProperty": "-webkit-transform,transform,",
+              "marginLeft": "20px",
+              "transform": "scaleY(0)",
+              "transformOrigin": "top",
+              "transitionDuration": "500ms",
+              "transitionProperty": "-webkit-transform,transform,",
+            }
+          }
+        />
       </div>
     </div>
     <div
@@ -1555,8 +1665,8 @@ exports[`Experience/Typography renders 1`] = `
                         "color": "rgba(46,51,56,1.00)",
                         "fontFamily": "Jost, futura-pt, futura, sans-serif",
                         "fontSize": "16px",
-                        "fontWeight": "500",
-                        "lineHeight": "18px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
                         "textRendering": "geometricPrecision",
                       }
                     }
@@ -1577,8 +1687,8 @@ exports[`Experience/Typography renders 1`] = `
                           "color": "rgba(46,51,56,1.00)",
                           "fontFamily": "Jost, futura-pt, futura, sans-serif",
                           "fontSize": "16px",
-                          "fontWeight": "500",
-                          "lineHeight": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
                           "textRendering": "geometricPrecision",
                         }
                       }
@@ -1692,8 +1802,8 @@ exports[`Experience/Typography renders 1`] = `
                         "color": "rgba(46,51,56,1.00)",
                         "fontFamily": "Jost, futura-pt, futura, sans-serif",
                         "fontSize": "16px",
-                        "fontWeight": "500",
-                        "lineHeight": "18px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
                         "textRendering": "geometricPrecision",
                       }
                     }
@@ -1714,8 +1824,8 @@ exports[`Experience/Typography renders 1`] = `
                           "color": "rgba(46,51,56,1.00)",
                           "fontFamily": "Jost, futura-pt, futura, sans-serif",
                           "fontSize": "16px",
-                          "fontWeight": "500",
-                          "lineHeight": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
                           "textRendering": "geometricPrecision",
                         }
                       }
@@ -1830,8 +1940,8 @@ exports[`Experience/Typography renders 1`] = `
                         "color": "rgba(46,51,56,1.00)",
                         "fontFamily": "Jost, futura-pt, futura, sans-serif",
                         "fontSize": "16px",
-                        "fontWeight": "500",
-                        "lineHeight": "18px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
                         "textRendering": "geometricPrecision",
                       }
                     }
@@ -1852,8 +1962,8 @@ exports[`Experience/Typography renders 1`] = `
                           "color": "rgba(46,51,56,1.00)",
                           "fontFamily": "Jost, futura-pt, futura, sans-serif",
                           "fontSize": "16px",
-                          "fontWeight": "500",
-                          "lineHeight": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
                           "textRendering": "geometricPrecision",
                         }
                       }
@@ -1967,8 +2077,8 @@ exports[`Experience/Typography renders 1`] = `
                         "color": "rgba(46,51,56,1.00)",
                         "fontFamily": "Jost, futura-pt, futura, sans-serif",
                         "fontSize": "16px",
-                        "fontWeight": "500",
-                        "lineHeight": "18px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
                         "textRendering": "geometricPrecision",
                       }
                     }
@@ -1989,8 +2099,8 @@ exports[`Experience/Typography renders 1`] = `
                           "color": "rgba(46,51,56,1.00)",
                           "fontFamily": "Jost, futura-pt, futura, sans-serif",
                           "fontSize": "16px",
-                          "fontWeight": "500",
-                          "lineHeight": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
                           "textRendering": "geometricPrecision",
                         }
                       }
@@ -2105,8 +2215,8 @@ exports[`Experience/Typography renders 1`] = `
                         "color": "rgba(46,51,56,1.00)",
                         "fontFamily": "Jost, futura-pt, futura, sans-serif",
                         "fontSize": "16px",
-                        "fontWeight": "500",
-                        "lineHeight": "18px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
                         "textRendering": "geometricPrecision",
                       }
                     }
@@ -2127,8 +2237,8 @@ exports[`Experience/Typography renders 1`] = `
                           "color": "rgba(46,51,56,1.00)",
                           "fontFamily": "Jost, futura-pt, futura, sans-serif",
                           "fontSize": "16px",
-                          "fontWeight": "500",
-                          "lineHeight": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
                           "textRendering": "geometricPrecision",
                         }
                       }
@@ -2198,8 +2308,8 @@ exports[`Experience/Typography renders 1`] = `
                         "color": "rgba(46,51,56,1.00)",
                         "fontFamily": "Jost, futura-pt, futura, sans-serif",
                         "fontSize": "16px",
-                        "fontWeight": "500",
-                        "lineHeight": "18px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
                         "textRendering": "geometricPrecision",
                       }
                     }
@@ -2243,8 +2353,8 @@ exports[`Experience/Typography renders 1`] = `
                         "color": "rgba(46,51,56,1.00)",
                         "fontFamily": "Jost, futura-pt, futura, sans-serif",
                         "fontSize": "16px",
-                        "fontWeight": "500",
-                        "lineHeight": "18px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
                         "textRendering": "geometricPrecision",
                       }
                     }
@@ -2252,7 +2362,7 @@ exports[`Experience/Typography renders 1`] = `
                     Jost
                      •
                      
-                    Medium
+                    Book
                   </div>
                   <div
                     className="css-view-1dbjc4n"
@@ -2265,15 +2375,15 @@ exports[`Experience/Typography renders 1`] = `
                           "color": "rgba(46,51,56,1.00)",
                           "fontFamily": "Jost, futura-pt, futura, sans-serif",
                           "fontSize": "16px",
-                          "fontWeight": "500",
-                          "lineHeight": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
                           "textRendering": "geometricPrecision",
                         }
                       }
                     >
                       16
                       px / 
-                      18
+                      20
                       px
                     </div>
                   </div>
@@ -2380,8 +2490,8 @@ exports[`Experience/Typography renders 1`] = `
                         "color": "rgba(46,51,56,1.00)",
                         "fontFamily": "Jost, futura-pt, futura, sans-serif",
                         "fontSize": "16px",
-                        "fontWeight": "500",
-                        "lineHeight": "18px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
                         "textRendering": "geometricPrecision",
                       }
                     }
@@ -2402,8 +2512,8 @@ exports[`Experience/Typography renders 1`] = `
                           "color": "rgba(46,51,56,1.00)",
                           "fontFamily": "Jost, futura-pt, futura, sans-serif",
                           "fontSize": "16px",
-                          "fontWeight": "500",
-                          "lineHeight": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
                           "textRendering": "geometricPrecision",
                         }
                       }
@@ -2515,8 +2625,8 @@ exports[`Experience/Typography renders 1`] = `
                         "color": "rgba(46,51,56,1.00)",
                         "fontFamily": "Jost, futura-pt, futura, sans-serif",
                         "fontSize": "16px",
-                        "fontWeight": "500",
-                        "lineHeight": "18px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
                         "textRendering": "geometricPrecision",
                       }
                     }
@@ -2537,8 +2647,8 @@ exports[`Experience/Typography renders 1`] = `
                           "color": "rgba(46,51,56,1.00)",
                           "fontFamily": "Jost, futura-pt, futura, sans-serif",
                           "fontSize": "16px",
-                          "fontWeight": "500",
-                          "lineHeight": "18px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
                           "textRendering": "geometricPrecision",
                         }
                       }
@@ -2714,8 +2824,8 @@ exports[`Experience/Typography renders 1`] = `
                       "color": "rgba(46,51,56,1.00)",
                       "fontFamily": "Jost, futura-pt, futura, sans-serif",
                       "fontSize": "16px",
-                      "fontWeight": "500",
-                      "lineHeight": "18px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
                       "marginBottom": "12px",
                       "textRendering": "geometricPrecision",
                     }

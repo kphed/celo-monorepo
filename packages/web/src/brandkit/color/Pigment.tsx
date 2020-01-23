@@ -1,4 +1,4 @@
-import ColorTranslator from 'colortranslator'
+import { ColorTranslator } from 'colortranslator'
 import hexRgba from 'hex-rgba'
 import * as React from 'react'
 import { StyleSheet, Text, View, ViewStyle } from 'react-native'
