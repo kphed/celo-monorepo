@@ -64,7 +64,9 @@ export class Header extends React.PureComponent<Props, State> {
   handleScroll = throttle(() => {
     const goingUp = this.lastScrollOffset > scrollOffset()
     const belowFold = scrollOffset() > menuHidePoint()
-
+    console.log('belowFold', belowFold)
+    console.log('goingUp', goingUp)
+    console.log('scrollOffset', scrollOffset())
     if (goingUp && belowFold) {
       this.setState({ belowFoldUpScroll: true })
     } else {
@@ -275,11 +277,13 @@ export class Header extends React.PureComponent<Props, State> {
             )}
           </View>
         </Responsive>
-        <View style={[styles.menuActive, !this.state.mobileMenuActive && styles.hidden]}>
-          <View style={styles.mobileOpenContainer}>
-            <Footer isVertical={true} currentPage={this.props.router.pathname} />
+        {!this.state.showDesktopMenu && (
+          <View style={[styles.menuActive, !this.state.mobileMenuActive && styles.hidden]}>
+            <View style={styles.mobileOpenContainer}>
+              <Footer isVertical={true} currentPage={this.props.router.pathname} />
+            </View>
           </View>
-        </View>
+        )}
 
         {!this.state.showDesktopMenu && !this.state.menuFaded && (
           <View style={[styles.hamburger]}>
