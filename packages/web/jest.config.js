@@ -10,6 +10,7 @@ module.exports = {
   },
   setupFiles: ['./jestSetup.js', 'jest-canvas-mock'],
   moduleNameMapper: {
+    '\\.(scss|css)$': 'identity-obj-proxy',
     '\\.(png|jpg|jpeg)$': '<rootDir>/__mocks__/ImageStub.ts',
     'pages/(.*)$': '<rootDir>/pages/$1',
     'src/(.*)$': '<rootDir>/src/$1',
