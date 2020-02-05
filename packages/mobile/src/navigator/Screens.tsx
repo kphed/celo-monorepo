@@ -58,6 +58,7 @@ export enum Screens {
   ReclaimPaymentConfirmationScreen = 'ReclaimPaymentConfirmationScreen',
   PaymentRequestConfirmation = 'PaymentRequestConfirmation',
   SelectLocalCurrency = 'SelectLocalCurrency',
+  Security = 'Security',
   Send = 'Send',
   SendAmount = 'SendAmount',
   SendConfirmation = 'SendConfirmation',
