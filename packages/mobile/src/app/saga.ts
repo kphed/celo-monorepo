@@ -24,10 +24,10 @@ import { Screens, Stacks } from 'src/navigator/Screens'
 import { PersistedRootState } from 'src/redux/reducers'
 import Logger from 'src/utils/Logger'
 import { clockInSync } from 'src/utils/time'
-import { toggleZeroSyncMode } from 'src/web3/actions'
-import { isInitiallyZeroSyncMode, web3 } from 'src/web3/contracts'
+import { toggleFornoMode } from 'src/web3/actions'
+import { isInitiallyFornoMode, web3 } from 'src/web3/contracts'
 import { getAccount } from 'src/web3/saga'
-import { zeroSyncSelector } from 'src/web3/selectors'
+import { fornoSelector } from 'src/web3/selectors'
 import { parse } from 'url'
 
 const TAG = 'app/saga'
@@ -72,14 +72,14 @@ export function* checkAppDeprecation() {
 }
 
 // Upon every app restart, web3 is initialized according to .env file
-// This updates to the chosen zeroSync mode in store
+// This updates to the chosen forno mode in store
 export function* toggleToProperSyncMode() {
   Logger.info(TAG + '@toggleToProperSyncMode/', 'Ensuring proper sync mode...')
   yield take(REHYDRATE)
-  const zeroSyncMode = yield select(zeroSyncSelector)
-  if (zeroSyncMode !== isInitiallyZeroSyncMode()) {
-    Logger.info(TAG + '@toggleToProperSyncMode/', `Switching to zeroSyncMode: ${zeroSyncMode}`)
-    yield put(toggleZeroSyncMode(zeroSyncMode))
+  const fornoMode = yield select(fornoSelector)
+  if (fornoMode !== isInitiallyFornoMode()) {
+    Logger.info(TAG + '@toggleToProperSyncMode/', `Switching to fornoMode: ${fornoMode}`)
+    yield put(toggleFornoMode(fornoMode))
   }
 }
 
@@ -146,9 +146,9 @@ export function* handleDeepLink(action: OpenDeepLink) {
 }
 
 export function* navigateWithPinProtection(action: NavigatePinProtected) {
-  const zeroSyncMode = yield select(zeroSyncSelector)
+  const fornoMode = yield select(fornoSelector)
   try {
-    if (!zeroSyncMode) {
+    if (!fornoMode) {
       const pincode = yield call(getPincode, false)
       yield put(startPinVerification())
       const account = yield call(getAccount)
@@ -156,7 +156,7 @@ export function* navigateWithPinProtection(action: NavigatePinProtected) {
       navigate(action.routeName, action.params)
       yield put(finishPinVerification())
     } else {
-      // TODO: Implement PIN protection for forno (zeroSyncMode)
+      // TODO: Implement PIN protection for forno mode
       navigate(action.routeName, action.params)
     }
   } catch (error) {
